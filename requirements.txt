@@ -5,7 +5,8 @@ chex == 0.1.85
 optax == 0.1.5
 tensorflow_probability == 0.23.0
 tensorflow == 2.15.0
-jax == 0.4.20
+# jax == 0.4.20
+# jax[cuda11_pip]==0.4.20
 distrax == 0.1.5
 flax == 0.7.5
 ml_collections >= 0.1.0

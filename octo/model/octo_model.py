@@ -566,7 +566,6 @@ def _download_from_huggingface(huggingface_repo_id: str):
 
     folder = huggingface_hub.snapshot_download(huggingface_repo_id)
     return folder
-    return folder
 
 
 SPEC_TEMPLATE = """
