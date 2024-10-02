@@ -1,14 +1,17 @@
 gym >= 0.26
-numpy == 1.24.3
-ml_dtypes == 0.2.0
-chex == 0.1.85
-optax == 0.1.5
+numpy 
+ml_dtypes >= 0.2.0
+chex 
+optax 
 tensorflow_probability == 0.23.0
 tensorflow == 2.15.0
+jax[cuda12]
 # jax == 0.4.20
 # jax[cuda11_pip]==0.4.20
-distrax == 0.1.5
-flax == 0.7.5
+# distrax == 0.1.5
+# flax == 0.7.5
+distrax >= 0.1.5
+flax >= 0.7.5
 ml_collections >= 0.1.0
 tqdm >= 4.60.0
 absl-py >= 0.12.0

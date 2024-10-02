@@ -73,7 +73,7 @@ class OctoTransformer(nn.Module):
         max_horizon (int): The maximum number of timesteps that the transformer can be run with. Note that while the
             transformer can be run with any horizon <= max_horizon, the model will only generate sane outputs for
             horizon lengths smaller or equal to the pre-training horizon.
-        repeat_task_tokens: If true, repeats the task tokens at each observation timesetep.
+        repeat_task_tokens: If true, repeats the task tokens at each observation timestep.
 
     """
 
