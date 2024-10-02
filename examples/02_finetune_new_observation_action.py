@@ -6,6 +6,7 @@ To run this example, first download and extract the dataset from here: https://r
 
 python examples/02_finetune_new_observation_action.py --pretrained_path=hf://rail-berkeley/octo-small-1.5 --data_dir=...
 """
+
 from absl import app, flags, logging
 import flax
 import jax
@@ -30,11 +31,20 @@ from octo.utils.train_utils import (
 FLAGS = flags.FLAGS
 
 flags.DEFINE_string(
-    "pretrained_path", None, "Path to pre-trained Octo checkpoint directory."
+    "pretrained_path",
+    "hf://rail-berkeley/octo-small-1.5",
+    "Path to pre-trained Octo checkpoint directory.",
 )
-flags.DEFINE_string("data_dir", None, "Path to finetuning dataset, in RLDS format.")
-flags.DEFINE_string("save_dir", None, "Directory for saving finetuning checkpoints.")
-flags.DEFINE_integer("batch_size", 128, "Batch size for finetuning.")
+flags.DEFINE_string(
+    "data_dir",
+    "/d/data/octo_dataset",
+    "Path to finetuning dataset, in RLDS format.",
+)
+flags.DEFINE_string(
+    "save_dir", "/d/data/octo_finetuned", "Directory for saving finetuning checkpoints."
+)
+# flags.DEFINE_integer("batch_size", 128, "Batch size for finetuning.")
+flags.DEFINE_integer("batch_size", 32, "Batch size for finetuning.")
 
 flags.DEFINE_bool(
     "freeze_transformer",
