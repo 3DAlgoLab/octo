@@ -67,7 +67,7 @@ At the moment we provide the following model versions:
 We provide simple [example scripts](examples) that demonstrate how to use and finetune Octo models,
 as well as how to use our data loader independently. We provide the following examples:
 
-|                                                                      |                                                                                                                    |
+| File                                                                 | Description                                                                                                                   |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
 | [Octo Inference](examples/01_inference_pretrained.ipynb)             | Minimal example for loading and running a pretrained Octo model                                                    |
 | [Octo Finetuning](examples/02_finetune_new_observation_action.py)    | Minimal example for finetuning a pretrained Octo models on a small dataset with a new observation and action space |

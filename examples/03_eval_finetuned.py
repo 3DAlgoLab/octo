@@ -15,6 +15,7 @@ To run this script, run:
     cd examples
     python3 03_eval_finetuned.py --finetuned_path=<path_to_finetuned_aloha_checkpoint>
 """
+
 from functools import partial
 import sys
 
@@ -24,7 +25,7 @@ import jax
 import numpy as np
 import wandb
 
-sys.path.append("path/to/your/act")
+sys.path.append("/d/dev_repo/ref/act")
 
 # keep this to register ALOHA sim env
 from envs.aloha_sim_env import AlohaGymEnv  # noqa
@@ -36,7 +37,9 @@ from octo.utils.train_callbacks import supply_rng
 FLAGS = flags.FLAGS
 
 flags.DEFINE_string(
-    "finetuned_path", None, "Path to finetuned Octo checkpoint directory."
+    "finetuned_path",
+    "/d/data/octo_finetuned",
+    "Path to finetuned Octo checkpoint directory.",
 )
 
 
@@ -86,7 +89,7 @@ def main(_):
         # create task specification --> use model utility to create task dict with correct entries
         language_instruction = env.get_task()["language_instruction"]
         task = model.create_tasks(texts=language_instruction)
-
+        print("Language Instruction:", language_instruction)
         # run rollout for 400 steps
         images = [obs["image_primary"][0]]
         episode_return = 0.0

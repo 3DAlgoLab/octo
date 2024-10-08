@@ -10,4 +10,4 @@ as well as how to use our data loader independently. We provide the following ex
 | [OCTO Rollout](03_eval_finetuned.py)                        | Run a rollout of a pre-trained OCTO policy in a Gym environment                                                 |
 | [OCTO Robot Eval](04_eval_finetuned_on_robot.py)            | Evaluate a pre-trained OCTO model on a real WidowX robot                                                        |
 | [OpenX Dataloader Intro](05_dataloading.ipynb)              | Walkthrough of the features of our Open X-Embodiment data loader                                                |
-| [OpenX PyTorch Dataloader](06_pytorch_oxe_dataloader.ipynb) | Standalone Open X-Embodiment data loader in PyTorch                                                             |
+| [OpenX PyTorch Dataloader](06_pytorch_oxe_dataloader.py) | Standalone Open X-Embodiment data loader in PyTorch                                                             |
