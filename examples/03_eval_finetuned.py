@@ -95,7 +95,7 @@ def main(_):
         episode_return = 0.0
         while len(images) < 400:
             # model returns actions of shape [batch, pred_horizon, action_dim] -- remove batch
-            actions = policy_fn(jax.tree_map(lambda x: x[None], obs), task)
+            actions = policy_fn(jax.tree.map(lambda x: x[None], obs), task)
             actions = actions[0]
 
             # step env -- info contains full "chunk" of observations for logging

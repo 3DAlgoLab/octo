@@ -14,6 +14,8 @@ import optax
 import tensorflow as tf
 import tqdm
 import wandb
+import os
+import shutil
 
 from octo.data.dataset import make_single_dataset
 from octo.model.components.action_heads import L1ActionHead
@@ -191,6 +193,10 @@ def main(_):
         return new_state, info
 
     # run finetuning loop
+    # - clear check path before training
+    if os.path.exists(FLAGS.save_dir):
+        shutil.rmtree(FLAGS.save_dir)
+
     logging.info("Starting finetuning...")
     for i in tqdm.tqdm(range(5000), total=5000, dynamic_ncols=True):
         batch = next(train_data_iter)
@@ -201,7 +207,9 @@ def main(_):
                 flax.traverse_util.flatten_dict({"training": update_info}, sep="/"),
                 step=i,
             )
+
         if (i + 1) % 1000 == 0:
+            # if (i + 1) % 3 == 0:
             # save checkpoint
             train_state.model.save_pretrained(step=i, checkpoint_path=FLAGS.save_dir)
 
